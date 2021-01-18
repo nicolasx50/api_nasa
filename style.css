@@ -1,0 +1,7 @@
+* {
+    background-color: aqua;
+}
+li img{
+    display: inline-block;
+    width: 300px;
+}
