@@ -10,7 +10,7 @@ def component_html(data)
   <body>
       <h1 style='text-align:center;'> FOTOS de ROVERS </h1>
       <ul>
-      #{images(data)}
+        '+imagenes (data_photos)+'
       </ul>
       <script src='https://code.jquery.com/jquery-3.5.1.slim.min.js' integrity='sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj' crossorigin='anonymous'></script>
       <script src='https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js' integrity='sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx' crossorigin='anonymous'></script>
@@ -18,12 +18,14 @@ def component_html(data)
   </html>"
 end
 
-def images(data)
-  photo = ""
-  data["photos"].each do |img|
-      photo += '  <li class="my-3" ><img class="img-fluid" src='+img["img_src"]+'></li>'+"\n"
+def imagenes(data_photos)
+
+  mars_rover_images = ''
+  data_photos.each do |photo|
+      mars_rover_images += "<li><img src="+photo["img_src"]+" alt= ""photos nasa"" class=""mb-4""></li>\n"
   end
-  return photo
+  return mars_rover_images
+
 end
 #######
 
