@@ -1,4 +1,4 @@
-def build_web_page(data)
+def component_html(data)
   "<!DOCTYPE html>
   <html lang='es'>
   <head>
@@ -10,7 +10,7 @@ def build_web_page(data)
   <body>
       <h1 style='text-align:center;'> FOTOS de ROVERS </h1>
       <ul>
-              #{images(data)}
+      #{images(data)}
       </ul>
       <script src='https://code.jquery.com/jquery-3.5.1.slim.min.js' integrity='sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj' crossorigin='anonymous'></script>
       <script src='https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js' integrity='sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx' crossorigin='anonymous'></script>
@@ -18,13 +18,13 @@ def build_web_page(data)
   </html>"
 end
 
-#def images(data)
- # photo = ""
-  #data["photos"].each do |img|
-   #   photo += '  <li class="my-3" ><img class="img-fluid" src='+img["img_src"]+'></li>'+"\n"
-  #end
-  #return photo
-#end
+def images(data)
+  photo = ""
+  data["photos"].each do |img|
+      photo += '  <li class="my-3" ><img class="img-fluid" src='+img["img_src"]+'></li>'+"\n"
+  end
+  return photo
+end
 #######
 
 ###########

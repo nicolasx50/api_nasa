@@ -1,11 +1,11 @@
 require_relative "./request_nasa.rb"
-require "json"
-require_relative './components.rb'
+require_relative "./components.rb"
 
 
-data = request("https://api.nasa.gov","FIvhdQte8TVVHT9rHzfNTc6fhgvWIPROqsdpXXVd")
+data = request("https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=1000&api_key=FIvhdQte8TVVHT9rHzfNTc6fhgvWIPROqsdpXXVd")['photos']
 #key "FIvhdQte8TVVHT9rHzfNTc6fhgvWIPROqsdpXXVd"
 
-content = components(data)
+content = component_html(data)
 
-File.write('./index.html', components)
+File.write('./index.html', content)
+photos_count(data)
